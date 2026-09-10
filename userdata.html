@@ -37,13 +37,19 @@
                 row.appendChild(thead);
                 row.appendChild(thead1);
                 row.appendChild(thead2);
+                const action = document.createElement('th');
+                const text3 = document.createTextNode('Action');
+                action.appendChild(text3);
+                row.appendChild(action);
                 table.appendChild(row);
+
                 data.forEach((user) => {
                  table.innerHTML += `
                 <tr>
                     <td>${user.name}</td>
                     <td>${user.email}</td>
                     <td>${user.phone}</td>
+                   <td><button onclick="location.href='userdetails.html?id=${user.id}'">Edit</button> <button onclick="deleteUser(${user.id})">Delete</button></td>
                 </tr>`
                 });
                 }catch(error){
