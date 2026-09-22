@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-box">
+            <h2>Login Page</h2>
+            <p class="subtitle">
+                Login to your Account
+            </p>
+            <form action="" id="loginForm">
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" name="" id="email" placeholder="Enter Email" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" name="" id="password" placeholder="Enter Password" required>
+                </div>
+                <button type="submit">Login</button>
+                <p id="message"></p>
+            </form>
+            <p class="login-link">
+                Don't have an Account? <a href="register.html">Register</a>
+            </p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit",
+            function(event){
+                event.preventDefault()
+                let email = document.getElementById("email").value
+                let pass = document.getElementById("password").value
+                let msg = document.getElementById("message");
+                // Get User form Localstorage
+                let storedUsers = localStorage.getItem("users");
+                if(storedUsers === null){
+                    msg.innerHTML = "No User found. Please register first"
+                    msg.className = "error"
+                    return;
+                }
+
+                //Convert to JSON Object
+                let users = JSON.parse(storedUsers)
+
+                // valid the user 
+                let userFound = users.find(u => {return u.email === email && u.password === pass })
+                if(!userFound){
+                    msg.innerHTML = "Invalid Username or Password"
+                    msg.className = "error"
+                    return;
+                }
+
+                msg.innerHTML = "Login Successfull"
+                msg.className = "success"
+
+                setTimeout(() => {
+                    window.location.href = "dashboard.html"
+                }, 1500);
+                
+            }
+        )
+    </script>
+</body>
+</html>

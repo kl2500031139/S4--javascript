@@ -1,0 +1,189 @@
+style.css
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.container {
+    width: 100%;
+    max-width: 450px;
+    padding: 20px;
+}
+
+.form-box {
+
+    background-color: white;
+
+    padding: 40px;
+
+    border-radius: 15px;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.form-box h2 {
+
+    text-align: center;
+
+    font-size: 30px;
+
+    margin-bottom: 8px;
+
+    color: #333;
+}
+
+.subtitle {
+
+    text-align: center;
+
+    color: #777;
+
+    margin-bottom: 30px;
+}
+
+.input-group {
+
+    margin-bottom: 20px;
+}
+
+.input-group label {
+
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+
+    color: #444;
+}
+
+.input-group input {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+.input-group input:focus {
+
+    border-color: #667eea;
+
+    box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+}
+
+button {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: linear-gradient(
+        135deg,
+        #667eea,
+        #764ba2
+    );
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+button:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.login-link {
+
+    text-align: center;
+
+    margin-top: 25px;
+
+    color: #666;
+}
+
+.login-link a {
+
+    color: #667eea;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+.login-link a:hover {
+
+    text-decoration: underline;
+}
+
+#message {
+
+    text-align: center;
+
+    margin-top: 15px;
+
+    font-weight: bold;
+}
+
+.success {
+
+    color: green;
+}
+
+.error {
+
+    color: red;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 500px) {
+
+    .form-box {
+
+        padding: 25px;
+    }
+
+    .form-box h2 {
+
+        font-size: 25px;
+    }
+
+}
